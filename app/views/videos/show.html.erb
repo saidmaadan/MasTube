@@ -1,0 +1,6 @@
+<p><%= @video.title %> has the Youtube video id of <%= @video.youtube_id %><br/>
+Description: <%= @video.description %></p>
+
+<%= link_to "Edit", edit_video_path(@video) %> |
+<%= link_to "Delete", video_path(@video), method: :delete, data: { confirm: 'Are you sure?' } %>
+
