@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Mastube</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Mastube" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Mastube" %>">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <script src="https://www.google.com/jsapi" type="text/javascript"></script>
+  <script src="https://www.youtube.com/iframe_api"></script>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <header>
+      <%= render 'layouts/navigation' %>
+    </header>
+    <!-- <div class="container"> -->
 
-<%= yield %>
+    <main role="main">
+       <%= render 'layouts/messages' %>
 
-</body>
+       <%= yield %>
+    </main>
+<div id="footer">
+  <div class="container">
+    <p class="text-muted">All right reserved 2014! Developed by <a href="http://maadan.me" target="_blank">Said Maadan</a></p>
+  </div>
+</div>
+  </body>
 </html>
+

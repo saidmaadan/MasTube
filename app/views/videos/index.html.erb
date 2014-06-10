@@ -1,26 +1,44 @@
-<h1><%= pluralize(@videos.size, 'Video') %> | <%= link_to 'Add New Video', new_video_path, class: 'button' %></h1>
+<div class="jumbotron">
+  <div class="container">
+  <div class="reg">
+    <h1>Mastube Video Curator</h1>
+    <p>
+      <%= link_to 'Sign In or Sign Up to Add video', new_video_path, class: 'btn btn-success btn-lg' %>
+    </p>
+    </div>
+  </div>
+</div>
 
-<ul>
-<% @videos.each do |video| %>
-<li>
-<article>
-<p><%= link_to video.title, video %> has the Youtube video id of <%= video.youtube_id %><br/>
-Description: <%= video.description %></p>
-<!-- <table>
-        <tr>
-          <th>Video Title:</th>
-          <td><%= video.title %></td>
-        </tr>
-        <tr>
-          <th>Description:</th>
-          <td><%= video.description %></td>
-        </tr>
-        <tr>
-          <th>Video Link:</th>
-          <td><%= video.youtube_id %></td>
-        </tr>
-      </table> -->
-    </article>
-</li>
+<% if @videos.any? %>
+  <div class="container">
+    <h1>Latest videos</h1>
+
+    <div id="player-wrapper"></div>
+
+    <% @videos.in_groups_of(3) do |group| %>
+      <div class="row">
+        <% group.each do |video| %>
+          <% if video %>
+            <div class="col-md-4">
+              <div class="yt_video thumbnail">
+                <iframe width="350" height="330" src="//www.youtube.com/embed/<%= video.youtube_id %>" frameborder="0" allowfullscreen></iframe>
+
+                <div class="caption">
+                  <h5><%= link_to video.title, video %></h5>
+
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 <% end %>
-</ul>
+
+
+
+
+
+
+

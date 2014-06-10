@@ -13,3 +13,24 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap";
+body{
+  margin: 0;
+}
+#footer{
+  background: #005500;
+  height: 50px;
+}
+#footer p{
+  text-align: center;
+  padding-top: 10px;
+}
+.navbar{
+  background: #005500;
+}
+.reg{
+  text-align: center;
+}
+.show{
+  text-align: center;
+}

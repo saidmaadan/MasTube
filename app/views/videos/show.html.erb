@@ -1,6 +1,10 @@
-<p><%= @video.title %> has the Youtube video id of <%= @video.youtube_id %><br/>
-Description: <%= @video.description %></p>
+<div class='show'><h2><%= link_to 'All Videos', videos_path, class: 'button' %></h2>
+
+<h2><%= @video.title %></h2><br/>
+<p>Description: <%= @video.description %></p>
+<iframe width="820" height="615" src="//www.youtube.com/embed/<%= @video.youtube_id %>" frameborder="0" allowfullscreen></iframe><br/>
 
 <%= link_to "Edit", edit_video_path(@video) %> |
 <%= link_to "Delete", video_path(@video), method: :delete, data: { confirm: 'Are you sure?' } %>
 
+</div>

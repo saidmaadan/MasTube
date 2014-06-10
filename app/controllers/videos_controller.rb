@@ -18,24 +18,31 @@ class VideosController < ApplicationController
     def update
       @video = Video.find(params[:id])
       @video.update(video_params)
-      redirect_to @video
+      redirect
     end
 
     def create
       @video = Video.new(video_params)
-      @video.save
-      redirect_to @video
+      if @video.save
+        flash[:success] = 'Video Added!'
+        redirect
+      else
+        render 'new'
+      end
     end
 
     def destroy
       @video = Video.find(params[:id])
       @video.destroy
-      redirect_to video_url
+      redirect
     end
 
   private
 
   def video_params
     params.require(:video).permit(:title, :description, :youtube_id)
+  end
+  def redirect
+    redirect_to @video
   end
 end
