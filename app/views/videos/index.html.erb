@@ -11,7 +11,7 @@
 
 <% if @videos.any? %>
   <div class="container">
-    <h1>Latest videos</h1>
+    <h1>New videos</h1>
 
     <div id="player-wrapper"></div>
 
@@ -24,7 +24,7 @@
                 <iframe width="350" height="330" src="//www.youtube.com/embed/<%= video.youtube_id %>" frameborder="0" allowfullscreen></iframe>
 
                 <div class="caption">
-                  <h5><%= link_to video.title, video %></h5>
+                  <h4><%= link_to video.title, video %></h4><br>
 
                 </div>
               </div>
