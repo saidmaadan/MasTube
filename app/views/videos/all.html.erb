@@ -1,10 +1,8 @@
 <!-- <div class="jumbotron"> -->
   <div class="container">
   <div class="reg">
-    <h1>Metube Video Curator</h1>
-    <p>
-      <%= link_to 'Sign In or Sign Up to Add video', new_video_path, class: 'btn btn-success btn-lg' %>
-    </p>
+    <!-- <h1>Metube Video Curator</h1> -->
+      <h2><%= pluralize(@videos.size, 'Metube Video')%></h2>
     </div>
   </div>
 <!-- </div> -->
@@ -33,13 +31,5 @@
         <% end %>
       </div>
     <% end %>
-<div class="more_videos"><%= link_to 'All Videos', videos_all_path, class: 'btn btn-warning' %></div>
   </div>
 <% end %>
-
-
-
-
-
-
-

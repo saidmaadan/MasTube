@@ -28,6 +28,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'rspec-rails'
 gem 'pry-debugger'
 gem 'hirb'
+gem 'twitter', '~> 5.9.0'
+gem 'twitter-text'
 
 group :development do
   gem 'rails_layout'

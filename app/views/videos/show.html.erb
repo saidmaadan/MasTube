@@ -1,10 +1,36 @@
-<div class='show'><h2><%= link_to 'All Videos', videos_path, class: 'button' %></h2>
+<!-- <div class="main"> -->
+<!-- <div class='row'> -->
+<!-- <div class='col-md-2'></div> -->
 
-<h2><%= @video.title %></h2><br/>
-<p>Description: <%= @video.description %></p>
-<iframe width="820" height="615" src="//www.youtube.com/embed/<%= @video.youtube_id %>" frameborder="0" allowfullscreen></iframe><br/>
+<!-- <div class='col-md-10 col-md-offset-2'> -->
+<div class="show">
+<h2><%= @video.title %></h2>
+<h3><%= @video.description %></h3><br>
+<iframe width="850" height="615" src="//www.youtube.com/embed/<%= @video.youtube_id %>" frameborder="0" allowfullscreen></iframe><br/>
 
 <%= link_to "Edit", edit_video_path(@video) %> |
 <%= link_to "Delete", video_path(@video), method: :delete, data: { confirm: 'Are you sure?' } %>
+</div><br>
 
-</div>
+<div class='comment-post'>
+<!-- <div class="comment"> -->
+<p><%= render 'comments/form', :video => @video, :comment => @video.comments.build %></p><br>
+<h2>Comment Box</h2>
+<div id='post'>
+
+<ul>
+<% @video.comments.each do |comment| %>
+
+  <p><li><%= comment.content %></p></li>
+  <% end %>
+  </ul>
+  </div>
+  </div>
+  <!-- </div> -->
+  <!-- </div> -->
+<!-- </div>
+</div> -->
+
+
+
+

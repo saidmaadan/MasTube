@@ -31,6 +31,48 @@ body{
 .reg{
   text-align: center;
 }
+.reg h1{
+  color: #005500;
+  font-weight: bold;
+  font-size: 3.5em;
+}
+.reg h2{
+  color: red;
+  font-weight: bold;
+  font-size: 3.5em;
+}
 .show{
   text-align: center;
 }
+.show h2{
+  color: #CC3333;
+}
+.show h3{
+  color: #005500;
+}
+.new_video{
+  // width: 40%;
+  // margin: 0 auto;
+  text-align: center;
+}
+// .container span{
+//   width: 200px;
+// }
+.more_videos {
+  text-align: center;
+  padding: 20px;
+}
+
+
+// @media screen and (max-width: 768px) and (min-width: 481px) {
+//   body {
+//     background: #FF6347;
+//     color: #FFF;
+//   }
+// }
+//  @media screen and (max-width: 480px) {
+//   body {
+//     background: #4682B4;
+//   }
+//  }
+

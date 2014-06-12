@@ -1,6 +1,12 @@
 class VideosController < ApplicationController
-  def index
-      @videos = Video.all
+
+    def index
+      # @videos = Video.all.limit(9).order("created_at desc")
+      @videos = Video.recently_added.limit(9)
+    end
+
+    def all
+      @videos = Video.recently_added
     end
 
     def show
@@ -24,7 +30,7 @@ class VideosController < ApplicationController
     def create
       @video = Video.new(video_params)
       if @video.save
-        flash[:success] = 'Video Added!'
+        flash[:success] = 'Your video successfully added!'
         redirect
       else
         render 'new'
