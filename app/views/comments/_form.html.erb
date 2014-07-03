@@ -2,12 +2,11 @@
 <!-- <div class="row">
 <div class="col-md-2">The</div>
 <div class="col-md-8"> -->
-<div id='form'>
-<%= form_for([video, comment]) do |f| %>
 
+<%= form_for([video, comment]) do |f| %>
     <p>
 
-      <%= f.text_area :content, cols: 140, rows: 4, placeholder: "What do you think? Post your comment!"%>
+      <%= f.text_area :content, cols: 140, rows: 4, placeholder: "What do you think? Post your comment!" %>
     </p>
   <p>
       <%= f.submit 'Post Comment', class: 'btn btn-success btn-lg'%>
@@ -18,5 +17,6 @@
 </div>
 </div> -->
 </div>
-</div>
+
+
 

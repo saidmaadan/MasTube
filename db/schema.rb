@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140611141406) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "comments", force: true do |t|
     t.integer  "video_id"
     t.text     "content"
@@ -27,8 +30,8 @@ ActiveRecord::Schema.define(version: 20140611141406) do
     t.datetime "updated_at"
   end
 
-  add_index "user_videos", ["user_id"], name: "index_user_videos_on_user_id"
-  add_index "user_videos", ["video_id"], name: "index_user_videos_on_video_id"
+  add_index "user_videos", ["user_id"], name: "index_user_videos_on_user_id", using: :btree
+  add_index "user_videos", ["video_id"], name: "index_user_videos_on_video_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "first_name"

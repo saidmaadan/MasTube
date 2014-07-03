@@ -6,7 +6,7 @@
 <div class="show">
 <h2><%= @video.title %></h2>
 <h3><%= @video.description %></h3><br>
-<iframe width="850" height="615" src="//www.youtube.com/embed/<%= @video.youtube_id %>" frameborder="0" allowfullscreen></iframe><br/><br>
+<iframe src="//www.youtube.com/embed/<%= @video.youtube_id %>" frameborder="0" allowfullscreen></iframe><br/><br>
 
 <%= link_to "Edit", edit_video_path(@video), class: 'btn btn-warning' %>
 <%= link_to "Delete", video_path(@video), class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' }  %>
@@ -14,7 +14,7 @@
 
 <div class='comment-post'>
 <!-- <div class="comment"> -->
-<p><%= render 'comments/form', :video => @video, :comment => @video.comments.build %></p><br>
+<div id='render'><%= render 'comments/form', :video => @video, :comment => @video.comments.build %></div><br>
 <h2>Comment Box</h2>
 <div id='post'>
 

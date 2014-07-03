@@ -22,6 +22,15 @@
   box-sizing: border-box;
   overflow: auto;
   margin: 0 auto;
+}
+
+.comment-post #render{
+  width: 80%;
+
+}
+.comment-post p{
+  width: 80%;
+
 
 }
 .comment-post h2{
@@ -38,6 +47,7 @@
   font-size: 1.5em;
 }
 .container #form input[type="text_area"]{
-  width: 800px;
+  width: 80%;
+  margin: 0 auto;
 
 }

@@ -44,6 +44,10 @@ body{
 .show{
   text-align: center;
 }
+.show iframe{
+  width: 70%;
+  height: 500px;
+}
 .show h2{
   color: #CC3333;
 }
@@ -61,6 +65,10 @@ body{
 .more_videos {
   text-align: center;
   padding: 20px;
+}
+.commentform{
+  width: 80%;
+  height: 40px;
 }
 
 
