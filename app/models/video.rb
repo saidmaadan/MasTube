@@ -6,6 +6,9 @@ class Video < ActiveRecord::Base
   has_many :users, through: :user_videos
   has_many :comments
 
+  include Tire::Model::Search
+  include Tire::Model::Callbacks
+
   def self.recently_added
     order('created_at desc')
   end

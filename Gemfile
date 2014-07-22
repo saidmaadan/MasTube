@@ -33,7 +33,8 @@ gem 'pry-debugger'
 gem 'hirb'
 gem 'twitter', '~> 5.9.0'
 gem 'twitter-text'
-
+gem 'tire'
+gem 'figaro'
 group :development do
   gem 'rails_layout'
 end
